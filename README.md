@@ -24,7 +24,7 @@ Assumming you have aws credentials with appropriate deployment permissions confi
 in a profile named "prod". Ideally you could impress your friends by creating a project
 that is _born_ in production.
 
-```
+```bash
 $ serverless install \
   --url https://github.com/softprops/serverless-lando \
   --name my-new-service \
@@ -37,3 +37,12 @@ The first time you run `make deploy` it will pull down and compile the base set
 of dependencies and your application. Unless the dependencies change afterwards,
 this should only happen once, resulting in an our of the box rabbit deployment
 cycle.
+
+## 👴 retiring
+
+Experimentation will likely facilitate retiring ideas. Retiring applications should be as easy as creating and deploying them them. This project provides
+ a dual to `make deploy` for doing so: `make destroy`
+
+```bash
+$ AWS_PROFILE=prod make destroy
+```
