@@ -4,7 +4,6 @@ provider:
   runtime: python3.6
   memorySize: 128
 plugins:
-  - serverless-plugin-tracing
   - serverless-rust
 custom:
   rust:
