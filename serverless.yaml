@@ -1,0 +1,29 @@
+service: serverless-lando
+provider:
+  name: aws
+  runtime: python3.6
+  memorySize: 128
+plugins:
+  - serverless-plugin-tracing
+  - serverless-rust
+custom:
+  rust:
+    cargoFlags: '--features lando/python3-sys'
+package:
+  individually: true
+  exclude:
+    - ./**
+functions:
+  hello:
+    handler: liblambda.handler
+    package:
+      include:
+        - liblambda.so
+    events:
+      - http:
+          path: '/hello/{name}'
+          method: GET
+          request:
+            parameters:
+              paths:
+                name: true

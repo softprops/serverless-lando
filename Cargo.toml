@@ -1,0 +1,12 @@
+[package]
+name = "serverless-lando"
+version = "0.1.0"
+authors = ["softprops <d.tangren@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+name = "lambda"
+
+[dependencies]
+lando = "0"
+cpython = "0.1"
