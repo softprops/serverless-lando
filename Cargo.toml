@@ -8,5 +8,5 @@ crate-type = ["cdylib"]
 name = "lambda"
 
 [dependencies]
-lando = "0"
+lando = "0.1"
 cpython = "0.1"
