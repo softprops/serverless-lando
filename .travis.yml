@@ -14,7 +14,7 @@ addons:
       - libssl-dev
 
 after_success:
-  # report code coverage to coverage
+  # report coverage to coveralls
   # see https://github.com/xd009642/tarpaulin for more information
   - |-
     (
