@@ -1,0 +1,31 @@
+# for more information on configuring a rust travis build
+# see https://docs.travis-ci.com/user/languages/rust/
+language: rust
+
+# improve ci turnaround time
+cache:
+  cargo: true
+  apt: true
+
+addons:
+  apt:
+    packages:
+      # required by tarpaulin
+      - libssl-dev
+
+after_success:
+  # report code coverage to coverage
+  # see https://github.com/xd009642/tarpaulin for more information
+  - |-
+    (
+      bash <(curl https://raw.githubusercontent.com/xd009642/tarpaulin/master/travis-install.sh) \
+      && cargo tarpaulin --ciserver travis-ci --coveralls $TRAVIS_JOB_ID
+    ) || true
+
+# deploy on pushes to master branch
+deploy:
+  - provider: script
+    script: make deploy
+    skip_cleanup: true
+    on:
+      branch: master
