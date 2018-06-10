@@ -38,6 +38,37 @@ of rustlang dependencies and your application. Unless the dependencies change af
 this should only happen once, resulting in an our of the box rabbit deployment
 cycle.
 
+## 🛵 Continuous Integration and Deployment
+
+This template includes an example [travis](https://travis-ci.org/) [configuration file](.travis.yml) which can unlock a virtuous cycle of continuous integration and deployment
+( i.e all tests are run on prs and every push to master results in a deployment ).
+
+To set up travis you will need to do a view things.
+
+Firstly version control your source. [Github](https://github.com/) is free for opensource.
+
+```bash
+$ git init
+$ git memote add origin git@github.com:{username}/{my-new-service}.git
+```
+
+Using the [travis cli](https://github.com/travis-ci/travis.rb#installation)
+ bootstrap your git repos' travis integration.
+
+```bash
+$ travis enable
+# set up AWS credentials for serverless deployment
+# https://serverless.com/framework/docs/providers/aws/guide/credentials/
+$ travis env set AWS_ACCESS_KEY_ID 'xxx'
+$ travis env set AWS_SECRET_ACCESS_KEY 'xxx'
+```
+
+> ⭐ You can optionally generate code coverage reports with [coveralls](http://coveralls.io/) by enabling your repo [here](https://coveralls.io/repos/new). You may need to sync repos first. You can then view your coverage reports at https://coveralls.io/github/{username}/{my-new-service}
+
+Add your changes to git and push them to github.
+
+open https://travis-ci.org/{username}/{my-new-service} in your browser
+
 ## 👴 retiring
 
 Experimentation will likely facilitate retiring ideas. Retiring applications should be as easy as creating and deploying them them. This project provides

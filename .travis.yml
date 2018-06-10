@@ -1,3 +1,6 @@
+# required for docker
+sudo: required
+
 # for more information on configuring a rust travis build
 # see https://docs.travis-ci.com/user/languages/rust/
 language: rust
@@ -6,11 +9,17 @@ language: rust
 cache:
   cargo: true
   apt: true
+  directories:
+    - node_modules
+
+services:
+  # start docker to enable lambda ci compatible build env
+  - docker
 
 addons:
   apt:
     packages:
-      # required by tarpaulin
+      # required by tarpaulin code coverage tool
       - libssl-dev
 
 after_success:
@@ -23,9 +32,13 @@ after_success:
     ) || true
 
 # deploy on pushes to master branch
+# assumes aws credentials (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
+# are configured in travis settings
+# see https://serverless.com/framework/docs/providers/aws/guide/credentials/
+# for more information
 deploy:
   - provider: script
-    script: make deploy
+    script: make dependencies deploy
     skip_cleanup: true
     on:
       branch: master

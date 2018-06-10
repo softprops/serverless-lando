@@ -11,7 +11,7 @@ dependencies: ## Install build dependencies
 	@echo "installing dependencies..."
 	@npm install serverless@1.27.3 serverless-rust@0.1.1
 
-deploy: #package ## Deploy application
+deploy: ## Deploy application
 	@echo "deploying function..."
 	@./node_modules/.bin/serverless \
 		deploy \
