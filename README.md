@@ -1,6 +1,6 @@
 # serverless lando template
 
-A sample template for bootstraping [lando](https://github.com/softprops/lando) applications with ⚡ serverless framework ⚡
+A sample template for bootstraping rustlang [lando](https://github.com/softprops/lando) applications with ⚡ serverless framework ⚡
 
 ## 📦 install
 
