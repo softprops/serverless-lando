@@ -45,14 +45,14 @@ This template includes an example [travis](https://travis-ci.org/) [configuratio
 
 To set up travis you will need to do a view things.
 
-Firstly version control your source. [Github](https://github.com/) is free for opensource.
+Firstly, version control your source. [Github](https://github.com/) is free for opensource.
 
 ```bash
 $ git init
-$ git memote add origin git@github.com:{username}/{my-new-service}.git
+$ git remote add origin git@github.com:{username}/{my-new-service}.git
 ```
 
-Using the [travis cli](https://github.com/travis-ci/travis.rb#installation)
+Using the [travis cli](https://github.com/travis-ci/travis.rb#installation),
  bootstrap your git repos' travis integration.
 
 ```bash
@@ -67,7 +67,7 @@ $ travis env set AWS_SECRET_ACCESS_KEY 'xxx'
 
 Add your changes to git and push them to github.
 
-open https://travis-ci.org/{username}/{my-new-service} in your browser
+Finally, https://travis-ci.org/{username}/{my-new-service} in your browser and grab a bucket of popcorn 🍿
 
 ## 👴 retiring
 
