@@ -38,7 +38,7 @@ of rustlang dependencies and your application. Unless the dependencies change af
 this should only happen once, resulting in an our of the box rabbit deployment
 cycle.
 
-## 🛵 Continuous Integration and Deployment
+## 🛵 continuous integration and deployment
 
 This template includes an example [travis](https://travis-ci.org/) [configuration file](.travis.yml) which can unlock a virtuous cycle of continuous integration and deployment
 ( i.e all tests are run on prs and every push to master results in a deployment ).
