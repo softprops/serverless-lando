@@ -12,7 +12,7 @@ dependencies: ## Install build dependencies
 	@npm install --silents
 
 package: ## Compile and package application
-	@echo "deploying function..."
+	@echo "packaging function..."
 	@./node_modules/.bin/serverless \
 		package \
 		--stage $(STAGE)
