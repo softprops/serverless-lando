@@ -9,7 +9,13 @@ help:
 
 dependencies: ## Install build dependencies
 	@echo "installing dependencies..."
-	@npm install serverless@1.27.3 serverless-rust@0.1.3
+	@npm install --silents
+
+package: ## Compile and package application
+	@echo "deploying function..."
+	@./node_modules/.bin/serverless \
+		package \
+		--stage $(STAGE)
 
 deploy: ## Deploy application
 	@echo "deploying function..."
