@@ -35,10 +35,7 @@ script:
 after_success:
   # report coverage to coveralls
   # see https://github.com/xd009642/tarpaulin for more information
-  - |-
-    (
-     cargo tarpaulin --ciserver travis-ci --coveralls $TRAVIS_JOB_ID
-    ) || true
+  - cargo tarpaulin --ciserver travis-ci --coveralls $TRAVIS_JOB_ID || true
 
 # deploy on pushes to master branch
 # assumes aws credentials (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
