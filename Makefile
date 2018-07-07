@@ -9,7 +9,7 @@ help:
 
 dependencies: ## Install build dependencies
 	@echo "installing dependencies..."
-	@npm install --silents
+	@npm install --silent
 
 package: dependencies ## Compile and package application
 	@echo "packaging function..."
