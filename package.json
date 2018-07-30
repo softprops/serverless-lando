@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "serverless": "^1.29.1",
-    "serverless-rust": "^0.1.4"
+    "serverless-rust": "^0.1.5"
   }
 }
