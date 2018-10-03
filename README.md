@@ -2,6 +2,13 @@
 
 A sample template for bootstraping rustlang [lando](https://github.com/softprops/lando) applications with ⚡ serverless framework ⚡
 
+## ✨ features
+
+* 🦀 Build Rustlang lando applications with ease
+* 🛵 Continuous integration testing with travis CI
+* 🚀 Continuous deployment with travis CI
+* 👩‍🏭 Simplified make based workflow
+
 ## 📦 install
 
 Install the [serverless framework](https://serverless.com/framework/) cli.
