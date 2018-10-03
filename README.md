@@ -42,7 +42,7 @@ $ serverless install \
 `make dependencies` will make sure npm dependencies are installed locally, this only needs run once.
 The first time you run `make deploy` it will pull down and compile the base set
 of rustlang dependencies and your application. Unless the dependencies change afterwards,
-this should only happen once, resulting in an our of the box rabbit deployment
+this should only happen once, resulting in an out of the box rapid deployment
 cycle.
 
 ## 🛵 continuous integration and deployment
