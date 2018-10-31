@@ -13,25 +13,25 @@ dependencies: ## Install build dependencies
 
 package: dependencies ## Compile and package application
 	@echo "packaging function..."
-	@./node_modules/.bin/serverless \
+	@npx serverless \
 		package \
 		--stage $(STAGE)
 
 deploy: ## Deploy application
 	@echo "deploying function..."
-	@./node_modules/.bin/serverless \
+	@npx serverless \
 		deploy \
 		--stage $(STAGE) \
 		--conceal
 
 destroy: ## Destroy application
 	@echo "destroying function..."
-	@./node_modules/.bin/serverless \
+	@npx serverless \
 		remove \
 		--stage $(STAGE) \
 
 logs: ## Fetches a stream of logs
 	@echo "fetching function logs..."
-	@./node_modules/.bin/serverless \
+	@npx serverless \
 		logs -f hello \
 		--stage $(STAGE)
