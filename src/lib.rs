@@ -1,6 +1,4 @@
 #[macro_use]
-extern crate cpython;
-#[macro_use]
 extern crate lando;
 
 // extends http::Request type with api gateway info

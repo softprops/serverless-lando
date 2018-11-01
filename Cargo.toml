@@ -5,8 +5,6 @@ publish = false
 
 [lib]
 crate-type = ["cdylib"]
-name = "lambda"
 
 [dependencies]
-lando = "0.1"
-cpython = "0.1"
+lando = { git = "https://github.com/softprops/lando.git", branch = "paste-test" }

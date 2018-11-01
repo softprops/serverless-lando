@@ -8,6 +8,7 @@ plugins:
 custom:
   rust:
     cargoFlags: '--features lando/python3-sys'
+    dockerTag: 'latest'
 package:
   individually: true
   exclude:
