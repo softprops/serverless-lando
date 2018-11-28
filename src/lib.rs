@@ -1,19 +1,19 @@
 #[macro_use]
-extern crate cpython;
-#[macro_use]
 extern crate lando;
 
-// extends http::Request type with api gateway info
-use lando::RequestExt;
+use lando::{LambdaContext, Request, RequestExt, Result, IntoResponse};
 
-gateway!(|request, _| {
-    println!("{:?}", request.path_parameters());
-    Ok(lando::Response::new(format!(
+// see https://docs.rs/lando docs for more examples and information
+#[lando]
+fn handler(request: Request, _: LambdaContext) -> Result<impl IntoResponse> {
+    // Return a 200 plain/text response with a "hello xxx body"
+    // where xxx is a path parameter `name` in /hello/{name} uris or "stranger"
+    // if not routed to with a {name} path parameter
+    Ok(format!(
         "hello {}",
         request
             .path_parameters()
             .get("name")
-            .cloned()
-            .unwrap_or_else(|| "stranger".to_owned())
-    )))
-});
+            .unwrap_or_else(|| "stranger")
+    ))
+}

@@ -1,12 +1,10 @@
 [package]
-name = "serverless-lando"
+name = "lambda"
 version = "0.1.0"
 publish = false
 
 [lib]
 crate-type = ["cdylib"]
-name = "lambda"
 
 [dependencies]
-lando = "0.1"
-cpython = "0.1"
+lando = "0.2"

@@ -8,6 +8,9 @@ plugins:
 custom:
   rust:
     cargoFlags: '--features lando/python3-sys'
+    # use the following to use the latest Rust release image
+    # if the plugin version is behind
+    # dockerTag: 'latest'
 package:
   individually: true
   exclude:
